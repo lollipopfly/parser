@@ -6,31 +6,16 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
 </head>
 <body>
-  <?php require 'scrap.php' ?>
-
-   <div class="container">
-     <div class="row">
-      <?php foreach ($items as $item): ?>
-       <div class="col-md-4">
-         <?php
-          $src = $item->children(0)->src;
-          $title = $item->children(1)->outertext;
-          $desc = $item->children(2)->outertext;
-         ?>
-         <?php if ($src): ?>
-          <img src="<?=$sitename.$src?>">
-         <?php endif ?>
-
-         <?php if ($title): ?>
-          <h2><?=$title ?></h2>
-         <?php endif ?>
-
-         <?php if ($desc): ?>
-           <p><?=$desc ?></p>
-         <?php endif ?>
-       </div>
-      <?php endforeach ?>
-     </div>
-   </div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="simple.php">Simple</a></li>
+          <li><a href="pagination.php">With pagination</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 </body>
 </html>
