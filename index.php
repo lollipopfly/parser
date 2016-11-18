@@ -13,6 +13,7 @@
         <ul class="nav navbar-nav">
           <li><a href="simple.php">Simple</a></li>
           <li><a href="pagination.php">With pagination</a></li>
+          <li><a href="auth.php">With authentication</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
