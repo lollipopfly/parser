@@ -13,9 +13,10 @@
       <?php foreach ($items as $item): ?>
        <div class="col-md-4">
          <?php
-          $src = $item->children(0)->src;
-          $title = $item->children(1)->outertext;
-          $desc = $item->children(2)->outertext;
+          $item = pq($item);
+          $src = $item->find('img')->attr('src');
+          $title = $item->find('h3')->html();
+          $desc = $item->find('.masonry-preview')->html();
          ?>
          <?php if ($src): ?>
           <img src="<?=$sitename.$src?>">
@@ -30,6 +31,7 @@
          <?php endif ?>
        </div>
       <?php endforeach ?>
+      <?php phpQuery::unloadDocuments(); ?>
      </div>
    </div>
 </body>

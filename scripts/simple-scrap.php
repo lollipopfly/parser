@@ -1,10 +1,11 @@
 <?php
-  require 'libs/simple_html_dom.php';
+  require 'libs/phpquery.php';
 
   $sitename = 'http://kvmpenza.ru/';
 
-  $html = file_get_html('http://kvmpenza.ru/news/');
+  $html = file_get_contents('http://kvmpenza.ru/news/');
 
-  $items = $html->find('.masonry-news-item');
+  phpQuery::newDocument($html);
 
+  $items = pq('.masonry-news-item');
 ?>
